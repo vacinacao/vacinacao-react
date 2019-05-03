@@ -15,7 +15,7 @@ class Footer extends React.Component {
       <div className="Footer">
         <div className="Side">
             <div className="LogoGov">
-              <img src={LogoGov}/>
+              <img src={LogoGov} alt='Logo'/>
             </div>
             <div className="InfoGov"> 
               <p>O projeto Vacina Brasil é mais uma iniciativa do Governo Federal para promover ao cidadão acesso à informações básicas e autenticadas disponíveis no banco de dados do Ministério da Saúde.  </p>
@@ -23,27 +23,27 @@ class Footer extends React.Component {
         </div>
         <div className="Side">
             <div className="Mastertech">
-              <img src={LogoMastertech}/>
+              <img src={LogoMastertech} alt='Logo Mastertech'/>
               <p>Este site foi desenvolvido como projeto de conclusão de curso de desenvolvimento FrontEnd 2019.1 sob orientação do professor Lucas Mello. </p>
             </div>
             <div className="Members"> 
               <div className="Member">
-                <img src={Caio}/>
+                <img src={Caio} alt='Foto membro da equipe'/>
               </div>
               <div className="Member">
-                <img src={Camila}/>
+                <img src={Camila} alt='Foto membro da equipe'/>
               </div>
               <div className="Member">
-                <img src={Italo}/>
+                <img src={Italo} alt='Foto membro da equipe'/>
               </div>
               <div className="Member">
-                <img src={Lucas}/>
+                <img src={Lucas} alt='Foto membro da equipe'/>
               </div>
               <div className="Member">
-                <img src={Luis}/>
+                <img src={Luis} alt='Foto membro da equipe'/>
               </div>
               <div className="Member">
-                <img src={Thiago}/>
+                <img src={Thiago} alt='Foto membro da equipe'/>
               </div>
             </div>
         </div>
