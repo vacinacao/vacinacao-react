@@ -2,22 +2,27 @@
     align-items: center;
     background-color: cornflowerblue;
     display: flex;
+    font-size: 14pt;
     height: 80px;
     justify-content: space-between;
     width: 100vw;
 }
-.Navbar .Logo {
+
+.Navbar .LogoMS {
     padding-left: 20px;
 }
-.Navbar .Logo img {
+
+.Navbar .LogoMS img {
     width: 150px;
 }
+
 .Navbar .Menu {
     align-items: center;
     display: flex;
     justify-content: space-around;
     width: 50vw;
 }
+
 .Navbar .Menu a {
     color: white;
     text-decoration: none;

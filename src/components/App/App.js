@@ -5,14 +5,17 @@ import Login from '../UserFolder/Login/Login';
 import Register from '../RegisterFolder/Register/Register';
 import Navbar from '../App/Navbar/Navbar';
 import './App.css';
+import Footer from './Footer/Footer';
 
 class App extends React.Component {
   render() {
-    return (<BrowserRouter>
-      <Route path="/" exact component={HomeApp}/>
-      <Route path="/login" exact component={Login}/>
-      <Route path="/register" exact component={Register}/>
-      <Navbar/>
+    return (
+      <BrowserRouter>
+        <Navbar/>
+          <Route path="/" exact component={HomeApp}/>
+          <Route path="/login" exact component={Login}/>
+          <Route path="/register" exact component={Register}/>
+          <Footer/>
       </BrowserRouter>
     );
   }

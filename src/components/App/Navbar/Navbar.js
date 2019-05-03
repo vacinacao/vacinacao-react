@@ -1,5 +1,5 @@
 import React from 'react';
-import mainLogo from '../../../assets/Ministerio_da_Saude-logo.png';
+import LogoMS from '../../../assets/Ministerio_da_Saude-logo.png';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
@@ -7,8 +7,8 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="Navbar">
-        <div className="Logo">
-          <img src={mainLogo}/>
+        <div className="LogoMS">
+          <img src={LogoMS}/>
         </div>
         <div className="Menu">
           <Link to="#about"><p>Propósito</p></Link>
