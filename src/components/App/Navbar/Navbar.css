@@ -1,0 +1,24 @@
+.Navbar {
+    align-items: center;
+    background-color: cornflowerblue;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    width: 100vw;
+}
+.Navbar .Logo {
+    padding-left: 20px;
+}
+.Navbar .Logo img {
+    width: 150px;
+}
+.Navbar .Menu {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+.Navbar .Menu a {
+    color: white;
+    text-decoration: none;
+}
