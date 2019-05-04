@@ -33,14 +33,7 @@ class Register extends React.Component {
   handleSubmit = () => {
     this.handleValidate();
     let newState = this.state;
-
-    if (this.state.FormRegisterIsValidate) {
-      newState.CheckRegisterDisplay = true;
-      console.log('handleSubmit true');
-    }
-    else {
-      console.log('handleSubmit false');
-    }
+    newState.CheckRegisterDisplay = true;
     this.setState(newState);
   }
 
@@ -67,16 +60,23 @@ class Register extends React.Component {
       <div className="Register">
         {this.state.CheckRegisterDisplay
           ?
+          <div>
           <CheckRegister
-
+            isValid={this.state.FormRegisterIsValidate}
           />
+          <FormRegister
+            nameChange={this.handleNameChange}
+            Submit={this.handleSubmit}
+            userData={this.state.userData}
+          />
+          </div>
           :
           <FormRegister
             nameChange={this.handleNameChange}
             Submit={this.handleSubmit}
             userData={this.state.userData}
           />
-        }
+        } 
       </div>
     );
   }
