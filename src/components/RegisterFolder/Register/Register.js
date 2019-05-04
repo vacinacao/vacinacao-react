@@ -9,13 +9,30 @@ class Register extends React.Component {
 
     this.state = {
       CheckRegisterDisplay: false,
+      userData: {
+        Name: '',
+        BirthDate: '',
+        Region: '',
+        Cpf: '',
+        Adress: '',
+        Email: '',
+        Password: '',
+        VaccineList: '',
+      }
     }
   }
 
-  handleSubmit = () => {
+  handleNameChange = (event) =>{
     let newState = this.state;
-    newState.CheckRegisterDisplay = true;
+    newState.userData[event.target.name] = event.target.value;
     this.setState(newState);
+    console.log(this.state.userData);
+  }
+
+  handleSubmit = () => {
+      let newState = this.state;
+      newState.CheckRegisterDisplay = true;
+      this.setState(newState);
   }
 
   render() {
@@ -28,7 +45,9 @@ class Register extends React.Component {
              />
           :
             <FormRegister
+              nameChange={this.handleNameChange}
               Submit={this.handleSubmit}
+              userData={this.state.userData}
             />
         }
       </div>
