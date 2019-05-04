@@ -62,7 +62,7 @@ class FormRegister extends React.Component {
             <input type="text" onChange={this.handleNameChange} value={this.state.VaccineList} name='VaccineList'  />
           </div>
         </div>
-        <button onClick={this.handleSubmit}>Enviar</button>
+        <button onClick={this.props.Submit}>Enviar</button>
       </div>
     );
   }
