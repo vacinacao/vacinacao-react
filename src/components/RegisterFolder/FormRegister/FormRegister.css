@@ -1,0 +1,12 @@
+.FormRegister{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.FormRegister div{
+    margin: 5px;
+}
+.FormRegister label{
+    margin-right: 4px;
+}
