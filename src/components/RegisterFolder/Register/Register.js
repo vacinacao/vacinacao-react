@@ -23,19 +23,13 @@ class Register extends React.Component {
       <div className="Register">
         {this.state.CheckRegisterDisplay
           ?
-          <div>
-            <FormRegister
-
-            />
-            <p>Verdadeiro</p>
-          </div>
+            <CheckRegister
+            
+             />
           :
-          <div>
             <FormRegister
               Submit={this.handleSubmit}
             />
-            <p>Falso</p>
-          </div>
         }
       </div>
     );
