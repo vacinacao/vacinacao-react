@@ -17,7 +17,7 @@ class Register extends React.Component {
         Cpf: '',
         Adress: '',
         Email: '',
-        Password: '',
+        Password: '', 
         VaccineList: '',
       }
     }
@@ -42,7 +42,8 @@ class Register extends React.Component {
     let newState = this.state;
 
     fields.forEach(function (currentValue, index) {
-      if (currentValue > 0) {
+      // console.log(newState.userData);
+      if (currentValue.length > 0) { 
         console.log(index + ' true');
         newState.FormRegisterIsValidate = true;
       }
@@ -51,10 +52,10 @@ class Register extends React.Component {
         newState.FormRegisterIsValidate = false;
       }
     });
-
     this.setState(newState);
+    console.log('Está valido? '+ newState.FormRegisterIsValidate);
   }
-
+  
   render() {
     return (
       <div className="Register">

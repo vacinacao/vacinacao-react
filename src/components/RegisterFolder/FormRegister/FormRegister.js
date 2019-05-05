@@ -1,56 +1,100 @@
 import React from 'react';
 import './FormRegister.css';
+import Input from './Input/Input';
 
 class FormRegister extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-    }
-}
+      inputData: {
+        Name: {
+          name: 'Name',
+          type: 'text',
+          label: 'Nome :',
+          maxLength: 15,
+        },
+        BirthDate: {
+          name: 'BirthDate',
+          type: 'date',
+          label: 'Data de Nascimento :',
+        },
+        Region: {
+          name: 'Region',
+          type: 'text',
+          label: 'Região :',
+        },
+        Cpf: {
+          name: 'Cpf',
+          type: 'text',
+          label: 'Cpf :',
+        },
+        Adress: {
+          name: 'Adress',
+          type: 'text',
+          label: 'Endereço :',
+        },
+        Email: {
+          name: 'Email',
+          type: 'text',
+          label: 'E-MAIL :',
+        },
+        Password: {
+          name: 'Password',
+          type: 'password',
+          label: 'Senha :',
+        },
+        VaccineList: {
+          name: 'VaccineList',
+          type: 'text',
+          label: 'Lista de Vacinas :',
+        }
 
+      }
+    }
+  }
   render() {
     return (
       <div className="FormRegister">
         <h2>Registro:</h2>
         <div className="Inputs">
-          <div className="Name">
-            <label htmlFor="Name">Nome:</label>
-            <input type="text" onChange={this.props.nameChange} value={this.props.userData.Name} name='Name' maxLength='15'/>
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.Name}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.BirthDate}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.Region}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.Cpf}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.Adress}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.Email}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.Password}
+          />
+          <Input
+            nameChange={this.props.nameChange}
+            inputData={this.state.inputData.VaccineList}
+          />
           </div>
-          <div className="BirthDate">
-            <label htmlFor="BirthDate">Data de Nascimento:</label>
-            <input type="date" onChange={this.props.nameChange} value={this.props.userData.BirthDate} name='BirthDate' />
-          </div>
-          <div className="Region">
-            <label htmlFor="Region">Região:</label>
-            <input type="text" onChange={this.props.nameChange} value={this.props.userData.Region} name='Region'  />
-          </div>
-          <div className="Cpf">
-            <label htmlFor="Cpf">CPF:</label>
-            <input type="number" onChange={this.props.nameChange} value={this.props.userData.Cpf} name='Cpf' />
-          </div>
-          <div className="Adress">
-            <label htmlFor="Adress">Endereço:</label>
-            <input type="text" onChange={this.props.nameChange} value={this.props.userData.Adress} name='Adress'  />
-          </div>
-          <div className="Email">
-            <label htmlFor="Email">E-MAIL:</label>
-            <input type="email" onChange={this.props.nameChange} value={this.props.userData.Email} name='Email' />
-          </div>
-          <div className="Password">
-            <label htmlFor="Password">Senha:</label>
-            <input type="password" onChange={this.props.nameChange} value={this.props.userData.Password} name='Password' />
-          </div>
-          <div className="VaccineList">
-            <label htmlFor="VaccineList">Lista de Vacinas:</label>
-            <input type="text" onChange={this.props.nameChange} value={this.props.userData.VaccineList} name='VaccineList'  />
-          </div>
+          <button onClick={this.props.Submit}>Enviar</button>
         </div>
-        <button onClick={this.props.Submit}>Enviar</button>
-      </div>
-    );
-  }
-}
+        );
+      }
+    }
 
 export default FormRegister;
