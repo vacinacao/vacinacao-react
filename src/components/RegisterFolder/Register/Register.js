@@ -9,7 +9,10 @@ class Register extends React.Component {
 
     this.state = {
       CheckRegisterDisplay: false,
-      FormRegisterIsValidate: false,
+      FormRegisterValidate: {
+        isValid: false,
+        error: [],
+      },
       userData: {
         Name: '',
         BirthDate: '',
@@ -17,7 +20,7 @@ class Register extends React.Component {
         Cpf: '',
         Adress: '',
         Email: '',
-        Password: '', 
+        Password: '',
         VaccineList: '',
       }
     }
@@ -41,35 +44,71 @@ class Register extends React.Component {
     let fields = Object.values(this.state.userData);
     let newState = this.state;
 
-    fields.forEach(function (currentValue, index) {
+    // Empty Validate
+    fields.forEach(function (currentValue, element) {
       // console.log(newState.userData);
-      if (currentValue.length > 0) { 
-        console.log(index + ' true');
-        newState.FormRegisterIsValidate = true;
+      if (currentValue.length > 0) {
+        newState.FormRegisterValidate.isValid = true;
       }
       else {
-        console.log(index + ' false');
-        newState.FormRegisterIsValidate = false;
+        newState.FormRegisterValidate.isValid = false;
+        newState.FormRegisterValidate.error.push(element);
       }
+      // Erro: o form está aceitando quando só o ultimo input tem valor pela ordem da estrutura do if
+
     });
+
     this.setState(newState);
-    console.log('Está valido? '+ newState.FormRegisterIsValidate);
+    this.SingleValidate();
+    // console.log('Está valido? ' + newState.FormRegisterValidate.isValid);
+    // console.log('Elementos Invalidos: '+ newState.FormRegisterValidate.error);
   }
-  
+  SingleValidate = () => {
+    for (let singleError of this.state.FormRegisterValidate.error) {
+      if (singleError === 0) {
+        console.log('0')
+      }
+      else if (singleError === 1) {
+        console.log('1')
+      }
+      else if (singleError === 2) {
+        console.log('2')
+      }
+      else if (singleError === 3) {
+        console.log('3')
+      }
+      else if (singleError === 4) {
+        console.log('4')
+      }
+      else if (singleError === 5) {
+        console.log('5')
+      }
+      else if (singleError === 6) {
+        console.log('6')
+      }
+      else if (singleError === 7) {
+        console.log('7')
+      }
+      else {
+        console.log('wtf');
+      }
+    }
+  }
+
   render() {
     return (
       <div className="Register">
         {this.state.CheckRegisterDisplay
           ?
           <div>
-          <CheckRegister
-            isValid={this.state.FormRegisterIsValidate}
-          />
-          <FormRegister
-            nameChange={this.handleNameChange}
-            Submit={this.handleSubmit}
-            userData={this.state.userData}
-          />
+            <CheckRegister
+              FormRegisterValidate={this.state.FormRegisterValidate}
+            />
+            <FormRegister
+              nameChange={this.handleNameChange}
+              Submit={this.handleSubmit}
+              userData={this.state.userData}
+            />
           </div>
           :
           <FormRegister
@@ -77,7 +116,7 @@ class Register extends React.Component {
             Submit={this.handleSubmit}
             userData={this.state.userData}
           />
-        } 
+        }
       </div>
     );
   }

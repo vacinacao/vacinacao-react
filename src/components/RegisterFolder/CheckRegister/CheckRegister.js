@@ -6,7 +6,7 @@ class CheckRegister extends React.Component {
   render() {
     return (
       <div className="CheckRegister">
-        {this.props.isValid
+        {this.props.FormRegisterValidate.isValid
           ?
           <div className="CheckRegisterRight">
             <img src={CheckSymbol} alt="CheckSymbol" />
@@ -14,7 +14,7 @@ class CheckRegister extends React.Component {
           </div>
           :
           <div className="CheckRegisterWrong">
-            <p>error</p>
+            <p>ERRO:</p>
           </div>
         }
       </div>
