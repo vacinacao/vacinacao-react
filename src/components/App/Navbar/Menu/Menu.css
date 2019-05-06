@@ -1,0 +1,75 @@
+.Navbar .Menu {
+    align-items: center;
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    padding: 20px 0;
+    position: fixed;
+    transform: translateY(80px);
+    transition: 0.4;
+    top: 0;
+    right: 0;
+    width: 100vw;
+}
+
+.Navbar .Menu a, .Navbar .Menu p {
+    color: white;
+    font-size: 18pt;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.Navbar .HamburguerButton {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    width: 30px;
+}
+
+.Navbar .HamburguerButton .Dash {
+    background-color: white;
+    border-radius: 20px;
+    height: 3px;
+    margin: 4px 0;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.Navbar .HamburguerButton .Dash:nth-child(1), .Navbar .HamburguerButton .Dash:nth-child(3) {
+    transform-origin: center right;
+}
+
+.Navbar .HamburguerButton.active .Dash:nth-child(1) {
+    transform: rotateZ(-45deg);
+}
+
+.Navbar .HamburguerButton.active .Dash:nth-child(2) {
+    opacity: 0;
+}
+
+.Navbar .HamburguerButton.active .Dash:nth-child(3) {
+    transform: rotateZ(45deg);
+}
+
+@media (min-width: 768px) {
+    .Navbar .Menu {
+        align-items: center;
+        background-color: none;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-around;
+        padding: 0;
+        position: relative;
+        transform: none;
+        width: 50vw;
+    }
+
+    .Navbar .HamburguerButton {
+        display: none;
+    }
+}
