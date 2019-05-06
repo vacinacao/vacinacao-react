@@ -6,6 +6,7 @@ import Register from '../RegisterFolder/Register/Register';
 import Navbar from '../App/Navbar/Navbar';
 import './App.css';
 import Footer from './Footer/Footer';
+import CardView from '../UserFolder/CardView/CardView';
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Route path="/" exact component={HomeApp}/>
           <Route path="/login" exact component={Login}/>
           <Route path="/register" exact component={Register}/>
+          <Route path="/cardView" exact component={CardView}/>
           <Footer/>
       </BrowserRouter>
     );
