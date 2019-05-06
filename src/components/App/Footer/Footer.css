@@ -70,6 +70,10 @@
         width: 80vw;
     }
 
+    .Footer .Members .Member img {
+        margin: 15px 40px;
+    }
+
     .Side {
         display: block;
         width: 100vw;
