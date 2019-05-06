@@ -1,0 +1,40 @@
+.Navbar .HamburguerButton {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    width: 30px;
+}
+
+.Navbar .HamburguerButton .Dash {
+    background-color: white;
+    border-radius: 20px;
+    height: 3px;
+    margin: 4px 0;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.Navbar .HamburguerButton .Dash:nth-child(1), .Navbar .HamburguerButton .Dash:nth-child(3) {
+    transform-origin: center right;
+}
+
+.Navbar .HamburguerButton.active .Dash:nth-child(1) {
+    transform: rotateZ(-45deg);
+}
+
+.Navbar .HamburguerButton.active .Dash:nth-child(2) {
+    opacity: 0;
+}
+
+.Navbar .HamburguerButton.active .Dash:nth-child(3) {
+    transform: rotateZ(45deg);
+}
+
+@media (min-width: 768px) {
+    .Navbar .HamburguerButton {
+        display: none;
+    }
+}
