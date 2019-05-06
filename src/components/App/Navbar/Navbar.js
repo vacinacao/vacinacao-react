@@ -9,7 +9,7 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuOpen: false
+      menuOpen: 'Menu',
     }
   }
 
@@ -18,24 +18,29 @@ class Navbar extends React.Component {
     event.target.classList.toggle('active');
 
     let newState = this.state;
-    newState.menuOpen = !newState.menuOpen;
+    if (newState.menuOpen === 'Menu') {
+      newState.menuOpen = 'Menu Open';
+    }
+    else {
+      newState.menuOpen = 'Menu'
+    }
     this.setState(newState);
   }
 
   render() {
-    let menu;
+    // let menu;
 
-    if (this.state.menuOpen) {
-      menu = <Menu/>
-    }
+    // if (this.state.menuOpen === 1) {
+    //   menu = 
+    // }
 
     return (
       <div className="Navbar">
         <div className="LogoMS">
           <a href="/"><img src={LogoMS} alt='Logo'/></a>
         </div>
-       {menu}
-       <HamburguerButton click={this.toggleClickHandler}/>      
+        <Menu setClass={this.state.menuOpen}/>
+        <HamburguerButton click={this.toggleClickHandler}/>      
        </div>
     );
   }
