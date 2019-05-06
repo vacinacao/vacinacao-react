@@ -1,4 +1,4 @@
-button {
+.Login button {
     background-color: #99d8c9;
     border-radius: 5px;
     border: none;
@@ -9,25 +9,25 @@ button {
     width: 20%;
 }
 
-button:hover {
+.Login button:hover {
     background-color: rgb(153, 216, 201, 0.5);
 }
 
 /* Hide HTML5 Up and Down arrows. */
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+.Login input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type="number"] {
+.Login input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.Inputs {
+.Login .Inputs {
     display: flex;
 }
 
-.Inputs div {
+.Login .Inputs div {
     margin: 50px 20px 0;
 }
 

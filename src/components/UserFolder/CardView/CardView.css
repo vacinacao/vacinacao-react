@@ -8,34 +8,34 @@
     margin: 0;
 }
 
-.ColorOk {
+.CardView .ColorOk {
     background-color: #99d8c9;
 }
 
-.ColorPending {
+.CardView .ColorPending {
     background-color: #f7d854;
 }
 
-.Subtitle {
+.CardView .Subtitle {
     display: flex;
 }
 
-.Subtitle .SubtitleColors {
+.CardView .Subtitle .SubtitleColors {
     margin: 0 10px;
 }
 
-.SubtitleColors .SubtitleSquare {
+.CardView .SubtitleColors .SubtitleSquare {
     padding: 20px;
 }
 
-.Vaccines {
+.CardView .Vaccines {
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 100vw;
 }
 
-.Vaccines div {
+.CardView .Vaccines div {
     align-items: center;
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgb(220, 220, 220);
@@ -51,36 +51,36 @@
 }
 
 @media (min-width: 768px) {
-    .Vaccines {
+    .CardView .Vaccines {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .Vaccines div {
+    .CardView .Vaccines div {
         width: 40%;
         margin: 10px;
     }
 }
 
 @media (min-width: 992px) {
-    .Vaccines {
+    .CardView .Vaccines {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .Vaccines div {
+    .CardView .Vaccines div {
         width: 30%;
         margin: 10px;
     }
 }
 
 @media (min-width: 1200px) {
-    .Vaccines {
+    .CardView .Vaccines {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .Vaccines div {
+    .CardView .Vaccines div {
         width: 20%;
         margin: 10px;
     }
