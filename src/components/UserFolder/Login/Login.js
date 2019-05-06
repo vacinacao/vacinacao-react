@@ -8,15 +8,15 @@ class Login extends React.Component {
         <h2>Login</h2>
           <div className='Inputs'>
             <div className='Cpf'>
-              <label htmlFor='Cpf'>CPF:</label>
+              <label htmlFor='Cpf'>CPF: </label>
               <input type='number' name='Cpf' />
             </div>
             <div className='BirthDate'>
-              <label htmlFor='BirthDate'>Data de Nascimento:</label>
+              <label htmlFor='BirthDate'>Data de Nascimento: </label>
               <input type='date' name='BirthDate' />
           </div>
-          <button>Logar</button>
           </div>
+          <button>Logar</button>
       </div>
     );
   }
