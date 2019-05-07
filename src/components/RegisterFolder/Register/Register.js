@@ -12,6 +12,10 @@ class Register extends React.Component {
       FormRegisterValidate: {
         isValid: false,
         error: [],
+        errorMsg:{
+          message: '',
+          hidden: true,
+        }
       },
       userData: {
         Name: '',
@@ -73,9 +77,11 @@ class Register extends React.Component {
 
   singleValidation = () => {
     let newState = this.state;
+
     for (let inputArrayError of newState.FormRegisterValidate.error) {
       if (inputArrayError === 0) {
-        console.log('Nome está errado');
+        newState.FormRegisterValidate.errorMsg.message = 'Nome';
+        newState.FormRegisterValidate.errorMsg.hidden = false;
       }
     }
     newState.FormRegisterValidate.error = [];
@@ -90,7 +96,7 @@ class Register extends React.Component {
           <div>
             <CheckRegister
               FormRegisterValidate={this.state.FormRegisterValidate}
-              nameError={this.singleValidation}
+              errorMsg={this.state.FormRegisterValidate.errorMsg}
             />
             <FormRegister
               nameChange={this.handleNameChange}

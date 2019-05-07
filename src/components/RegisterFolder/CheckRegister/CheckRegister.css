@@ -9,7 +9,10 @@
     width: 100px;
 }
 .CheckRegister p{
-    color:black;
+    /* color:black; */
     font-size: 30pt;
     margin-left: 20px;
+}
+.hidden{
+    display: none;
 }
