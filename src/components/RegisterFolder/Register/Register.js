@@ -52,10 +52,10 @@ class Register extends React.Component {
 
     // RegularExpressions Vars
     let regularExp = {
-      name: /^[a-zA-Z ]+$/,
+      name: new RegExp(/^[a-zA-Z ]+$/),
+      Cpf: new RegExp(/^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$/),
+      Email: new RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-.\]+)\.([a-zA-Z]{2,5})$/),
     }
-    let regularExpActivate = new RegExp(regularExp.name);
-
 
     fields.forEach(function (currentValue, element) {
       // console.log(newState.userData);
@@ -65,7 +65,19 @@ class Register extends React.Component {
         // Regular Expression Logic
         // Nome
         if (element === 0) {
-          if (!regularExpActivate.test(currentValue)) {
+          if (!regularExp.name.test(currentValue)) {
+            newState.FormRegisterValidate.error.push(element);
+          }
+        }
+        // Cpf
+        if (element === 3) {
+          if (!regularExp.Cpf.test(currentValue)) {
+            newState.FormRegisterValidate.error.push(element);
+          }
+        }
+        // Email
+        if (element === 5) {
+          if (!regularExp.Email.test(currentValue)) {
             newState.FormRegisterValidate.error.push(element);
           }
         }
