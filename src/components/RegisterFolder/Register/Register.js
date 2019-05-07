@@ -60,14 +60,25 @@ class Register extends React.Component {
   }
   checkValidate = () => {
     let newState = this.state;
-    console.log(this.state.FormRegisterValidate.error);
+    // console.log(this.state.FormRegisterValidate.error);
     if (newState.FormRegisterValidate.error.length === 0) {
       newState.FormRegisterValidate.isValid = true;
     }
     else {
       newState.FormRegisterValidate.isValid = false;
-      newState.FormRegisterValidate.error = [];
+      this.singleValidation();
     }
+    this.setState(newState);
+  }
+
+  singleValidation = () => {
+    let newState = this.state;
+    for (let inputArrayError of newState.FormRegisterValidate.error) {
+      if (inputArrayError === 0) {
+        console.log('Nome está errado');
+      }
+    }
+    newState.FormRegisterValidate.error = [];
     this.setState(newState);
   }
 
@@ -79,6 +90,7 @@ class Register extends React.Component {
           <div>
             <CheckRegister
               FormRegisterValidate={this.state.FormRegisterValidate}
+              nameError={this.singleValidation}
             />
             <FormRegister
               nameChange={this.handleNameChange}
