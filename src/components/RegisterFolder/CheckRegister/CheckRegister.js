@@ -14,11 +14,10 @@ class CheckRegister extends React.Component {
           </div>
           :
           <div className="CheckRegisterWrong">
-            <p>ERRO:</p>
             <p 
             className={this.props.errorMsg.hidden ? 'hidden' : ''}
             >
-            Erro: {this.props.errorMsg.message}</p>
+            Invalid: {this.props.errorMsg.message}</p>
           </div>
         }
       </div>

@@ -13,7 +13,7 @@ class Register extends React.Component {
         isValid: false,
         error: [],
         errorMsg:{
-          message: '',
+          message: [],
           hidden: true,
         }
       },
@@ -57,6 +57,7 @@ class Register extends React.Component {
         newState.FormRegisterValidate.error.push(element);
       }
     });
+    newState.FormRegisterValidate.errorMsg.message = [];
     this.setState(newState);
     this.checkValidate();
     // console.log('Está valido? ' + newState.FormRegisterValidate.isValid);
@@ -80,7 +81,35 @@ class Register extends React.Component {
 
     for (let inputArrayError of newState.FormRegisterValidate.error) {
       if (inputArrayError === 0) {
-        newState.FormRegisterValidate.errorMsg.message = 'Nome';
+        newState.FormRegisterValidate.errorMsg.message.push('Nome ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 1) {
+        newState.FormRegisterValidate.errorMsg.message.push('Data de Nascimento ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 2) {
+        newState.FormRegisterValidate.errorMsg.message.push('Região ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 3) {
+        newState.FormRegisterValidate.errorMsg.message.push('CPF ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 4) {
+        newState.FormRegisterValidate.errorMsg.message.push('Endereço ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 5) {
+        newState.FormRegisterValidate.errorMsg.message.push('Email ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 6) {
+        newState.FormRegisterValidate.errorMsg.message.push('Senha ');
+        newState.FormRegisterValidate.errorMsg.hidden = false;
+      }
+      if (inputArrayError === 7) {
+        newState.FormRegisterValidate.errorMsg.message.push('Lista de Vascinas ');
         newState.FormRegisterValidate.errorMsg.hidden = false;
       }
     }
