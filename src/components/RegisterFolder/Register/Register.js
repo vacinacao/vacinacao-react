@@ -54,12 +54,11 @@ class Register extends React.Component {
       }
     });
     this.setState(newState);
-    this.singleValidate();
-    // this.singleValidate();
+    this.checkValidate();
     // console.log('Está valido? ' + newState.FormRegisterValidate.isValid);
     // console.log('Elementos Invalidos: '+ newState.FormRegisterValidate.error);
   }
-  singleValidate = () => {
+  checkValidate = () => {
     let newState = this.state;
     console.log(this.state.FormRegisterValidate.error);
     if (newState.FormRegisterValidate.error.length === 0) {
