@@ -23,8 +23,6 @@
     width: 65%;
 }
 
-
-
 @media (max-width: 1000px) {
 
 .About {
@@ -42,5 +40,4 @@
     width: 100%;
     /* height: 600px; */
 }
-
 }
