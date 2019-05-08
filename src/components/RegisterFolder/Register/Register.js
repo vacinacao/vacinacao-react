@@ -54,7 +54,7 @@ class Register extends React.Component {
     let regularExp = {
       name: new RegExp(/^[a-zA-Z ]+$/),
       Cpf: new RegExp(/^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$/),
-      Email: new RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-.\]+)\.([a-zA-Z]{2,5})$/),
+      Email: new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
     }
 
     fields.forEach(function (currentValue, element) {
