@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   render() {
@@ -14,9 +15,9 @@ class Login extends React.Component {
             <div className='BirthDate'>
               <label htmlFor='BirthDate'>Data de Nascimento: </label>
               <input type='date' name='BirthDate' />
+            </div>
           </div>
-          </div>
-          <button>Logar</button>
+          <Link to="/cardview"><button>Logar</button></Link>
       </div>
     );
   }

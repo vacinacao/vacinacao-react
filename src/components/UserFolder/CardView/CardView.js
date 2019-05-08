@@ -1,5 +1,6 @@
 import React from 'react';
 import './CardView.css';
+import VaccineHover from './VaccineHover/VaccineHover';
 
 class CardView extends React.Component {
   render() {
@@ -7,7 +8,7 @@ class CardView extends React.Component {
       <div className='CardView'>
         <h2>Minhas Vacinas</h2>
         <div className='Vaccines'>
-            <div className='ColorOk'>
+            {/* <div className='ColorOk'>
                 <h3>BCG (Bacilo Calmette-Guerin)</h3>
             </div>
             <div className='ColorOk'>
@@ -24,7 +25,8 @@ class CardView extends React.Component {
             </div>
             <div className='ColorPending'>
                 <h3>Rotavírus</h3>
-            </div>
+            </div> */}
+            <VaccineHover/>
         </div>
         <h3>Legenda</h3>
         <div className='Subtitle'>
