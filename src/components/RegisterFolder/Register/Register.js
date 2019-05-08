@@ -12,7 +12,7 @@ class Register extends React.Component {
       FormRegisterValidate: {
         isValid: false,
         error: [],
-        errorMsg:{
+        errorMsg: {
           message: [],
           hidden: true,
         }
@@ -42,16 +42,45 @@ class Register extends React.Component {
     let newState = this.state;
     newState.CheckRegisterDisplay = true;
     this.setState(newState);
+    console.log(this.state.userData);
+    console.log(this.state.FormRegisterValidate.isValid);
   }
 
   handleValidate = () => {
     let fields = Object.values(this.state.userData);
     let newState = this.state;
 
-    // Empty Validate
+    // RegularExpressions Vars
+    let regularExp = {
+      name: new RegExp(/^[a-zA-Z ]+$/),
+      Cpf: new RegExp(/^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$/),
+      Email: new RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-.\]+)\.([a-zA-Z]{2,5})$/),
+    }
+
     fields.forEach(function (currentValue, element) {
       // console.log(newState.userData);
+
+      // Empty Validate
       if (currentValue.length > 0) {
+        // Regular Expression Logic
+        // Nome
+        if (element === 0) {
+          if (!regularExp.name.test(currentValue)) {
+            newState.FormRegisterValidate.error.push(element);
+          }
+        }
+        // Cpf
+        if (element === 3) {
+          if (!regularExp.Cpf.test(currentValue)) {
+            newState.FormRegisterValidate.error.push(element);
+          }
+        }
+        // Email
+        if (element === 5) {
+          if (!regularExp.Email.test(currentValue)) {
+            newState.FormRegisterValidate.error.push(element);
+          }
+        }
       }
       else {
         newState.FormRegisterValidate.error.push(element);
@@ -60,57 +89,58 @@ class Register extends React.Component {
     newState.FormRegisterValidate.errorMsg.message = [];
     this.setState(newState);
     this.checkValidate();
-    // console.log('Está valido? ' + newState.FormRegisterValidate.isValid);
-    // console.log('Elementos Invalidos: '+ newState.FormRegisterValidate.error);
   }
   checkValidate = () => {
     let newState = this.state;
-    // console.log(this.state.FormRegisterValidate.error);
+
     if (newState.FormRegisterValidate.error.length === 0) {
       newState.FormRegisterValidate.isValid = true;
     }
     else {
       newState.FormRegisterValidate.isValid = false;
-      this.singleValidation();
+      this.handleDisplayErrorMsg();
     }
     this.setState(newState);
   }
 
-  singleValidation = () => {
+  handleDisplayErrorMsg = () => {
     let newState = this.state;
 
     for (let inputArrayError of newState.FormRegisterValidate.error) {
+      let errorMsg = newState.FormRegisterValidate.errorMsg.message;
+      let hiddenMsg = newState.FormRegisterValidate.errorMsg;
+
       if (inputArrayError === 0) {
-        newState.FormRegisterValidate.errorMsg.message.push('Nome ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Nome ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 1) {
-        newState.FormRegisterValidate.errorMsg.message.push('Data de Nascimento ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Data de Nascimento ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 2) {
-        newState.FormRegisterValidate.errorMsg.message.push('Região ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Região ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 3) {
-        newState.FormRegisterValidate.errorMsg.message.push('CPF ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('CPF ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 4) {
-        newState.FormRegisterValidate.errorMsg.message.push('Endereço ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Endereço ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 5) {
-        newState.FormRegisterValidate.errorMsg.message.push('Email ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Email ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 6) {
-        newState.FormRegisterValidate.errorMsg.message.push('Senha ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Senha ');
+        hiddenMsg.hidden = false;
       }
       if (inputArrayError === 7) {
-        newState.FormRegisterValidate.errorMsg.message.push('Lista de Vascinas ');
-        newState.FormRegisterValidate.errorMsg.hidden = false;
+        errorMsg.push('Lista de Vascinas ');
+        hiddenMsg.hidden = false;
       }
     }
     newState.FormRegisterValidate.error = [];
@@ -120,26 +150,15 @@ class Register extends React.Component {
   render() {
     return (
       <div className="Register">
-        {this.state.CheckRegisterDisplay
-          ?
-          <div>
-            <CheckRegister
-              FormRegisterValidate={this.state.FormRegisterValidate}
-              errorMsg={this.state.FormRegisterValidate.errorMsg}
-            />
-            <FormRegister
-              nameChange={this.handleNameChange}
-              Submit={this.handleSubmit}
-              userData={this.state.userData}
-            />
-          </div>
-          :
-          <FormRegister
-            nameChange={this.handleNameChange}
-            Submit={this.handleSubmit}
-            userData={this.state.userData}
-          />
-        }
+        <CheckRegister
+          FormRegisterValidate={this.state.FormRegisterValidate}
+          errorMsg={this.state.FormRegisterValidate.errorMsg}
+        />
+        <FormRegister
+          nameChange={this.handleNameChange}
+          Submit={this.handleSubmit}
+          userData={this.state.userData}
+        />
       </div>
     );
   }
