@@ -9,3 +9,6 @@
 .Input {
     display: flex;
 }
+.inputError{
+    color: red;
+}

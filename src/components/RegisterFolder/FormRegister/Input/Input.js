@@ -13,6 +13,7 @@ class Input extends React.Component {
                     type={this.props.inputData.type}
                     value={this.props.inputData.value}
                     maxLength={this.props.inputData.maxLength}
+                    className={this.props.lala ? 'inputError' : ''}
                 />
             </div>
         </div>

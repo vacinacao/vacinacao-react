@@ -25,6 +25,16 @@ class Register extends React.Component {
         Email: '',
         Password: '',
         VaccineList: '',
+      },
+      inputError: {
+        Name: false,
+        BirthDate: false,
+        Region: false,
+        Cpf: false,
+        Adress: false,
+        Email: false,
+        Password: false,
+        VaccineList:false,
       }
     }
   }
@@ -33,7 +43,7 @@ class Register extends React.Component {
     let newState = this.state;
     newState.userData[event.target.name] = event.target.value;
     this.setState(newState);
-    // console.log(this.state.userData);
+    // console.log(this.state.us  erData);
   }
 
   handleSubmit = () => {
@@ -41,8 +51,8 @@ class Register extends React.Component {
     let newState = this.state;
     newState.CheckRegisterDisplay = true;
     this.setState(newState);
-    console.log(this.state.userData);
-    console.log(this.state.FormRegisterValidate.isValid);
+    // console.log(this.state.userData);
+    // console.log(this.state.FormRegisterValidate.isValid);
   }
 
   handleValidate = () => {
@@ -97,9 +107,9 @@ class Register extends React.Component {
     }
     else {
       newState.FormRegisterValidate.isValid = false;
-      this.handleDisplayErrorMsg();
     }
     this.setState(newState);
+    this.handleDisplayErrorMsg();
   }
 
   handleDisplayErrorMsg = () => {
@@ -112,38 +122,46 @@ class Register extends React.Component {
       if (inputArrayError === 0) {
         errorMsg.push('Nome ');
         hiddenMsg.hidden = false;
+        newState.inputError.Name = true; 
       }
       if (inputArrayError === 1) {
         errorMsg.push('Data de Nascimento ');
         hiddenMsg.hidden = false;
+        newState.inputError.BirthDate = true; 
       }
       if (inputArrayError === 2) {
         errorMsg.push('Região ');
         hiddenMsg.hidden = false;
+        newState.inputError.Region = true; 
       }
       if (inputArrayError === 3) {
         errorMsg.push('CPF ');
         hiddenMsg.hidden = false;
+        newState.inputError.Cpf = true; 
       }
       if (inputArrayError === 4) {
         errorMsg.push('Endereço ');
         hiddenMsg.hidden = false;
+        newState.inputError.Adress = true; 
       }
       if (inputArrayError === 5) {
         errorMsg.push('Email ');
         hiddenMsg.hidden = false;
+        newState.inputError.Email = true; 
       }
       if (inputArrayError === 6) {
         errorMsg.push('Senha ');
         hiddenMsg.hidden = false;
+        newState.inputError.Password = true; 
       }
       if (inputArrayError === 7) {
         errorMsg.push('Lista de Vascinas ');
         hiddenMsg.hidden = false;
+        newState.inputError.VaccineList = true; 
       }
+      this.setState(newState);
     }
     newState.FormRegisterValidate.error = [];
-    this.setState(newState);
   }
 
   render() {
@@ -155,6 +173,7 @@ class Register extends React.Component {
           userData={this.state.userData}
           FormRegisterValidate={this.state.FormRegisterValidate}
           errorMsg={this.state.FormRegisterValidate.errorMsg}
+          lala={this.state.inputError}
         />
       </div>
     );
