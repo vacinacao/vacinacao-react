@@ -1,6 +1,7 @@
 import React from 'react';
 import './FormRegister.css';
 import Input from './Input/Input';
+import CheckRegister from '../CheckRegister/CheckRegister';
 
 class FormRegister extends React.Component {
   constructor(props) {
@@ -56,6 +57,10 @@ class FormRegister extends React.Component {
   render() {
     return (
       <div className="FormRegister">
+        <CheckRegister
+          FormRegisterValidate={this.props.FormRegisterValidate}
+          errorMsg={this.props.errorMsg}
+        />
         <h2>Registro:</h2>
         <div className="Inputs">
           <Input

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Register.css';
 import FormRegister from '../FormRegister/FormRegister';
-import CheckRegister from '../CheckRegister/CheckRegister';
 
 class Register extends React.Component {
   constructor(props) {
@@ -150,14 +149,12 @@ class Register extends React.Component {
   render() {
     return (
       <div className="Register">
-        <CheckRegister
-          FormRegisterValidate={this.state.FormRegisterValidate}
-          errorMsg={this.state.FormRegisterValidate.errorMsg}
-        />
         <FormRegister
           nameChange={this.handleNameChange}
           Submit={this.handleSubmit}
           userData={this.state.userData}
+          FormRegisterValidate={this.state.FormRegisterValidate}
+          errorMsg={this.state.FormRegisterValidate.errorMsg}
         />
       </div>
     );
