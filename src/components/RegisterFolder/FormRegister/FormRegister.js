@@ -29,6 +29,7 @@ class FormRegister extends React.Component {
           name: 'Cpf',
           type: 'text',
           label: 'Cpf :',
+          maxLength: 8,
         },
         Adress: {
           name: 'Adress',
@@ -44,6 +45,7 @@ class FormRegister extends React.Component {
           name: 'Password',
           type: 'password',
           label: 'Senha :',
+          maxLength: 14,
         },
         VaccineList: {
           name: 'VaccineList',
@@ -62,44 +64,48 @@ class FormRegister extends React.Component {
           errorMsg={this.props.errorMsg}
         />
         <h2>Registro:</h2>
-        <div className="Inputs">
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.Name}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.BirthDate}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.Region}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.Cpf}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.Adress}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.Email}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.Password}
-          />
-          <Input
-            nameChange={this.props.nameChange}
-            inputData={this.state.inputData.VaccineList}
-          />
-          </div>
+        <div className="fieldsInputs">
+          <aside>
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.Name}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.Email}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.Cpf}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.BirthDate}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.Password}
+            />
+          </aside>
+          <section>
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.Region}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.Adress}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              inputData={this.state.inputData.VaccineList}
+            />
+          </section>
           <button onClick={this.props.Submit}>Enviar</button>
         </div>
-        );
-      }
-    }
+      </div>
+    );
+  }
+}
 
 export default FormRegister;

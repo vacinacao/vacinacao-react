@@ -1,15 +1,9 @@
 .CheckRegister{
     align-items: center;
-    display: flex;
     justify-content: center;
     margin-top: 40px;
 }
-.CheckRegister img{
-    height: auto;
-    width: 100px;
-}
 .CheckRegister p{
-    /* color:black; */
     font-size: 30pt;
     margin-left: 20px;
 }

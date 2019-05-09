@@ -5,7 +5,10 @@ import CheckSymbol from '../../../assets/CheckSymbol.png';
 class CheckRegister extends React.Component {
   render() {
     return (
-      <div className="CheckRegister">
+      <div className={`
+      CheckRegister 
+      ${this.props.errorMsg.hidden ? 'hidden' : ''}
+      `}>
         {this.props.FormRegisterValidate.isValid
           ?
           <div className="CheckRegisterRight">
@@ -14,10 +17,10 @@ class CheckRegister extends React.Component {
           </div>
           :
           <div className="CheckRegisterWrong">
-            <p 
-            className={this.props.errorMsg.hidden ? 'hidden' : ''}
+            <p
+              className={this.props.errorMsg.hidden ? 'hidden' : ''}
             >
-            Invalid: {this.props.errorMsg.message}</p>
+              Invalid: {this.props.errorMsg.message}</p>
           </div>
         }
       </div>

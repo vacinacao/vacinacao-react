@@ -4,16 +4,18 @@ import './Input.css';
 class Input extends React.Component {
     render() {
         return (
+        <div className='Input'>
             <div className={this.props.inputData.name}>
-            <label htmlFor={this.props.inputData.name}>{this.props.inputData.label}</label>
-            <input
-            onChange={this.props.nameChange}
-            name={this.props.inputData.name} 
-            type={this.props.inputData.type}
-            value={this.props.inputData.value} 
-            maxLength={this.props.inputData.maxLength}
-            />
-          </div>
+                <label htmlFor={this.props.inputData.name}>{this.props.inputData.label}</label>
+                <input
+                    onChange={this.props.nameChange}
+                    name={this.props.inputData.name}
+                    type={this.props.inputData.type}
+                    value={this.props.inputData.value}
+                    maxLength={this.props.inputData.maxLength}
+                />
+            </div>
+        </div>
         );
     }
 }

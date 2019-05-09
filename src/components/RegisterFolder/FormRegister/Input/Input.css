@@ -1,0 +1,11 @@
+.Input label{
+    display: flex;
+    align-items: center;
+}
+.Input input{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.Input {
+    display: flex;
+}
