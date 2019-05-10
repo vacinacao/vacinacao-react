@@ -6,20 +6,17 @@ class CheckRegister extends React.Component {
   render() {
     return (
       <div className="CheckRegister">
-        {this.props.FormRegisterValidate.isValid
-          ?
-          <div className="CheckRegisterRight">
-            <img src={CheckSymbol} alt="CheckSymbol" />
-            <p>Cadastro Feito!</p>
-          </div>
-          :
-          <div className="CheckRegisterWrong">
-            <p 
-            className={this.props.errorMsg.hidden ? 'hidden' : ''}
-            >
-            Invalid: {this.props.errorMsg.message}</p>
-          </div>
-        }
+        <div className={this.props.display ? '' : 'hidden'}>
+          {this.props.formRegisterValidate.isValid
+            ?
+            <div className="CheckRegisterRight">
+              <img src={CheckSymbol} alt="CheckSymbol" />
+              <p>Cadastro Feito!</p>
+            </div>
+            :
+            <p>fudeu</p>
+          }
+        </div>
       </div>
     );
   }

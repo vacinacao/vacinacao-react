@@ -5,11 +5,16 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "create-react-app": "^3.0.0",
+    "google-map-react": "^1.1.4",
+    "google-maps-react": "^2.0.2",
     "react": "^16.8.6",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0"
+    "react-router-hash-link": "^1.2.1",
+    "react-scripts": "3.0.0",
+    "react-scrollchor": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

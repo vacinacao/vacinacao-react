@@ -21,6 +21,7 @@
 .About .Video{
     padding: 0px 0px 0px 100px;
     width: 65%;
+    /* height: 100%; */
 }
 
 @media (max-width: 1000px) {

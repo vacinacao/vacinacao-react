@@ -1,0 +1,43 @@
+.Map {
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+    margin-bottom: -30px;
+}
+
+.Map h2{
+    color: cornflowerblue;
+    padding-bottom: 20px;
+}
+
+.Map label{
+    padding-bottom: 10px;
+}
+
+.Map .formMap{
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+    width: 100%;
+}
+
+.Map .formMap input{
+    height: 50px;
+    width: 260px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border:solid 1px black;
+}
+
+
+.Map .formMap button{
+    height: 50px;
+    width: 260px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    background-color:cornflowerblue;
+    
+}

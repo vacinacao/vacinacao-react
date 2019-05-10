@@ -1,17 +1,20 @@
 .CheckRegister{
     align-items: center;
-    display: flex;
     justify-content: center;
     margin-top: 40px;
 }
-.CheckRegister img{
-    height: auto;
-    width: 100px;
+.CheckRegisterRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.CheckRegister p{
-    /* color:black; */
+.CheckRegisterRight p{
     font-size: 30pt;
     margin-left: 20px;
+}
+.CheckRegisterRight img{
+    width: auto;
+    height: 5vh;
 }
 .hidden{
     display: none;
