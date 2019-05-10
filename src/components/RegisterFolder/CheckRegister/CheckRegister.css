@@ -3,9 +3,18 @@
     justify-content: center;
     margin-top: 40px;
 }
-.CheckRegister p{
+.CheckRegisterRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CheckRegisterRight p{
     font-size: 30pt;
     margin-left: 20px;
+}
+.CheckRegisterRight img{
+    width: auto;
+    height: 5vh;
 }
 .hidden{
     display: none;

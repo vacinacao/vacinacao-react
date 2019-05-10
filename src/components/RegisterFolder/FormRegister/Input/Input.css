@@ -1,14 +1,7 @@
-.Input label{
+.Input {
     display: flex;
-    align-items: center;
 }
 .Input input{
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-.Input {
-    display: flex;
-}
-.inputError{
-    color: red;
 }

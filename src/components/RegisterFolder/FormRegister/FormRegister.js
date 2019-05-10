@@ -4,119 +4,54 @@ import Input from './Input/Input';
 import CheckRegister from '../CheckRegister/CheckRegister';
 
 class FormRegister extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      inputData: {
-        Name: {
-          name: 'Name',
-          type: 'text',
-          label: 'Nome :',
-          maxLength: 15,
-          // error: this.props.lala.Name,
-        },
-        BirthDate: {
-          name: 'BirthDate',
-          type: 'date',
-          label: 'Data de Nascimento :',
-          // error: this.props.lala.BirthDate,
-        },
-        Region: {
-          name: 'Region',
-          type: 'text',
-          label: 'Região :',
-          // error: this.props.lala.Region,
-        },
-        Cpf: {
-          name: 'Cpf',
-          type: 'text',
-          label: 'Cpf :',
-          maxLength: 8,
-          // error: this.props.lala.Cpf,
-        },
-        Adress: {
-          name: 'Adress',
-          type: 'text',
-          label: 'Endereço :',
-          // error: this.props.lala.Adress,
-        },
-        Email: {
-          name: 'Email',
-          type: 'text',
-          label: 'E-MAIL :',
-          // error: this.props.lala.Email,
-        },
-        Password: {
-          name: 'Password',
-          type: 'password',
-          label: 'Senha :',
-          maxLength: 14,
-          // error: this.props.lala.Password,
-        },
-        VaccineList: {
-          name: 'VaccineList',
-          type: 'text',
-          label: 'Lista de Vacinas :',
-          // error: this.props.lala.VaccineList,
-        },
-      }
-    }
-  }
   render() {
     return (
-      <div className="FormRegister">}
+      <div className="FormRegister">
         <CheckRegister
-          FormRegisterValidate={this.props.FormRegisterValidate}
-          errorMsg={this.props.errorMsg}
+          formRegisterValidate={this.props.formRegisterValidate}
+          display={this.props.checkRegisterDisplay}
         />
         <h2>Registro:</h2>
         <div className="fieldsInputs">
           <aside>
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.Name}
-              lala={this.props.lala.Name}
+              inputData={this.props.userData.name.inputData}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.Email}
-              lala={this.props.lala.Email}
+              inputData={this.props.userData.email.inputData}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.Cpf}
-              lala={this.props.lala.Cpf}
+              inputData={this.props.userData.cpf.inputData}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.BirthDate}
-              lala={this.props.lala.BirthDate}
+              inputData={this.props.userData.birthDate.inputData}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.Password}
-              lala={this.props.lala.Password}
+              inputData={this.props.userData.password.inputData}
+
             />
           </aside>
           <section>
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.Region}
-              lala={this.props.lala.Region}
+              inputData={this.props.userData.region.inputData}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.Adress}
-              lala={this.props.lala.Adress}
+              inputData={this.props.userData.adress.inputData}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.state.inputData.VaccineList}
-              lala={this.props.lala.VaccineList}
+              inputData={this.props.userData.vaccineList.inputData}
+
             />
           </section>
-          <button onClick={this.props.Submit}>Enviar</button>
+          <button onClick={this.props.submit}>Enviar</button>
         </div>
       </div>
     );
