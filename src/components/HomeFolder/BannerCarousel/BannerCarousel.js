@@ -14,14 +14,14 @@ class BannerCarousel extends React.Component {
             <img
               className="d-block w-100"
               src={Banner1}
-              alt="First slide"
+              alt="Movimento Vacina Brasil"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
               src={Banner2}
-              alt="Third slide"
+              alt="Não coloque a vida de quem você ama em risco"
             />
           </Carousel.Item>
           

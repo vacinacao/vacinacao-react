@@ -5,8 +5,9 @@ import Login from '../UserFolder/Login/Login';
 import Register from '../RegisterFolder/Register/Register';
 import Navbar from '../App/Navbar/Navbar';
 import './App.css';
-import Footer from './Footer/Footer';
 import CardView from '../UserFolder/CardView/CardView';
+import Footer from './Footer/Footer';
+
 
 class App extends React.Component {
   render() {
