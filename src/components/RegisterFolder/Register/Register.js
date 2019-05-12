@@ -134,7 +134,35 @@ class Register extends React.Component {
 
       // Regular Expressions
       if (userDataName === 'name') {
+        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue); 
+        if(regExpTest){
+          userDataContent.isValid = true;
+        }
+        else{
+          userDataContent.isValid = false;    
+        }
       }
+
+      if (userDataName === 'email') {
+        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue); 
+        if(regExpTest){
+          userDataContent.isValid = true;
+        }
+        else{
+          userDataContent.isValid = false;    
+        }
+      }
+
+      if (userDataName === 'cpf') {
+        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue); 
+        if(regExpTest){
+          userDataContent.isValid = true;
+        }
+        else{
+          userDataContent.isValid = false;    
+        }
+      }
+
 
 
       // Set newState userData Content 
