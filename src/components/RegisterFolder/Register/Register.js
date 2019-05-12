@@ -1,5 +1,6 @@
 import React from 'react';
 import './Register.css';
+import CheckRegister from '../CheckRegister/CheckRegister'
 import FormRegister from '../FormRegister/FormRegister';
 
 class Register extends React.Component {
@@ -118,25 +119,32 @@ class Register extends React.Component {
   handleValidate = () => {
     let newState = this.state;
     let arrayUserData = Object.entries(newState.userData);
-  
-    arrayUserData.forEach(function(currentValue){
+
+    arrayUserData.forEach(function (currentValue) {
       let userDataContent = currentValue[1];
       let userDataName = currentValue[0];
 
       // Empty Validation
-      if(userDataContent.inputData.inputValue.length > 0){
+      if (userDataContent.inputData.inputValue.length > 0) {
         userDataContent.isValid = true;
       }
-      // Regular Expressions
-      else if(userDataName === 'name'){
+      else {
+        userDataContent.isValid = false;
       }
+
+      // Regular Expressions
+      if (userDataName === 'name') {
+      }
+
+
+      // Set newState userData Content 
       newState.userData[userDataName] = userDataContent;
 
       // Form Validation 
-      if(userDataContent.isValid === false){
+      if (userDataContent.isValid === false) {
         newState.formRegisterValidate.isValid = false;
       }
-      else{
+      else {
         newState.formRegisterValidate.isValid = true;
       }
     });
@@ -147,13 +155,16 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div className="Register" >
-        <FormRegister
-          checkRegisterDisplay={this.state.checkRegisterDisplay}
+      <div className="Register">
+        <CheckRegister
           formRegisterValidate={this.state.formRegisterValidate}
+          display={this.state.checkRegisterDisplay}
+        />
+        <FormRegister
           nameChange={this.handleNameChange}
           submit={this.handleSubmit}
           userData={this.state.userData}
+          checkRegisterDisplay={this.state.checkRegisterDisplay}
         />
       </div>
     );

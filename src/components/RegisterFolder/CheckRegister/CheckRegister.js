@@ -14,7 +14,7 @@ class CheckRegister extends React.Component {
               <p>Cadastro Feito!</p>
             </div>
             :
-            <p>fudeu</p>
+            <div></div>
           }
         </div>
       </div>

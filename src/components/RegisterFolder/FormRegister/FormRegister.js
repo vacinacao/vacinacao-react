@@ -1,53 +1,81 @@
 import React from 'react';
 import './FormRegister.css';
 import Input from './Input/Input';
-import CheckRegister from '../CheckRegister/CheckRegister';
+import ErrorMessage from './ErrorMessage/ErrorMessage';
 
 class FormRegister extends React.Component {
   render() {
     return (
       <div className="FormRegister">
-        <CheckRegister
-          formRegisterValidate={this.props.formRegisterValidate}
-          display={this.props.checkRegisterDisplay}
-        />
         <h2>Registro:</h2>
         <div className="fieldsInputs">
           <aside>
-            <Input
-              nameChange={this.props.nameChange}
-              inputData={this.props.userData.name.inputData}
+            <ErrorMessage
+              userData={this.props.userData.name}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.props.userData.email.inputData}
+              userData={this.props.userData.name}
+            />
+            <ErrorMessage
+              userData={this.props.userData.email}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.props.userData.cpf.inputData}
+              userData={this.props.userData.email}
+            />
+            <ErrorMessage
+              userData={this.props.userData.cpf}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.props.userData.birthDate.inputData}
+              userData={this.props.userData.cpf}
+            />
+            <ErrorMessage
+              userData={this.props.userData.birthDate}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.props.userData.password.inputData}
+              userData={this.props.userData.birthDate}
+            />
+            <ErrorMessage
+              userData={this.props.userData.password}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              userData={this.props.userData.password}
 
             />
           </aside>
           <section>
-            <Input
-              nameChange={this.props.nameChange}
-              inputData={this.props.userData.region.inputData}
+            <ErrorMessage
+              userData={this.props.userData.region}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.props.userData.adress.inputData}
+              userData={this.props.userData.region}
+            />
+            <ErrorMessage
+              userData={this.props.userData.adress}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
             />
             <Input
               nameChange={this.props.nameChange}
-              inputData={this.props.userData.vaccineList.inputData}
+              userData={this.props.userData.adress}
+            />
+            <ErrorMessage
+              userData={this.props.userData.vaccineList}
+              checkRegisterDisplay={this.props.checkRegisterDisplay}
+            />
+            <Input
+              nameChange={this.props.nameChange}
+              userData={this.props.userData.vaccineList}
 
             />
           </section>
