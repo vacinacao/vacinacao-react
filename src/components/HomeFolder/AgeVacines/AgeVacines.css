@@ -1,0 +1,77 @@
+.AgeVacines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.AgeVacines .VaccinesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.AgeVacines h2 {
+    color: cornflowerblue;
+}
+
+.AgeVacines .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    width: 84%;
+}
+
+.AgeVacines .dropdown-toggle {
+    background-color: cornflowerblue;
+    border: none;
+    width: 100%;
+}
+
+.AgeVacines .dropdown-menu {
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .AgeVacines .VaccinesContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .AgeVacines .dropdown {
+        margin: 20px;
+        width: 41%; 
+    }
+}
+
+@media (min-width: 992px) {
+    .AgeVacines .VaccinesContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .AgeVacines .dropdown {
+        margin: 20px;
+        width: 43%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .AgeVacines .VaccinesContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .AgeVacines .dropdown {
+        margin: 20px;
+        width: 45%; 
+    }
+}
