@@ -21,7 +21,10 @@ class Map extends React.Component {
 
   handleInputValueChange = (event)=>{
     let newState = this.state;
-    newState[event.target.name] = event.target.value;
+    if(event.target.textLength <= 8){
+      newState[event.target.name] = event.target.value;  
+    }
+    // error: when cep value starts with a zero, the last number value can be replaced
     this.setState(newState);
   }
 
@@ -31,7 +34,7 @@ class Map extends React.Component {
         <div className="formMap">
           <h2>Encontre o posto mais próximo de você!</h2>
           <label>Digite seu CEP:</label>
-          <input onChange={this.handleInputValueChange} type="number" name="cepInputValue" value={this.state.cep}/>
+          <input onChange={this.handleInputValueChange} type="number" name="cepInputValue" value={this.state.cepInputValue}/>
           <button onClick={this.handleCepApi}>Pesquisar meu CEP</button>
         </div>
 
