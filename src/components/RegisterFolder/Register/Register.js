@@ -81,7 +81,7 @@ class Register extends React.Component {
           inputData: {
             inputValue: '',
             name: 'password',
-            type: 'text',
+            type: 'password',
             label: 'Senha :',
             maxLength: 15,
           },
@@ -134,49 +134,55 @@ class Register extends React.Component {
 
       // Regular Expressions
       if (userDataName === 'name') {
-        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue); 
-        if(regExpTest){
+        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue);
+        if (regExpTest) {
           userDataContent.isValid = true;
         }
-        else{
-          userDataContent.isValid = false;    
+        else {
+          userDataContent.isValid = false;
         }
       }
 
       if (userDataName === 'email') {
-        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue); 
-        if(regExpTest){
+        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue);
+        if (regExpTest) {
           userDataContent.isValid = true;
         }
-        else{
-          userDataContent.isValid = false;    
+        else {
+          userDataContent.isValid = false;
         }
       }
 
       if (userDataName === 'cpf') {
-        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue); 
-        if(regExpTest){
+        let regExpTest = userDataContent.regularExp.test(userDataContent.inputData.inputValue);
+        if (regExpTest) {
           userDataContent.isValid = true;
         }
-        else{
-          userDataContent.isValid = false;    
+        else {
+          userDataContent.isValid = false;
         }
       }
-
-
-
       // Set newState userData Content 
       newState.userData[userDataName] = userDataContent;
-
-      // Form Validation 
-      if (userDataContent.isValid === false) {
-        newState.formRegisterValidate.isValid = false;
-      }
-      else {
-        newState.formRegisterValidate.isValid = true;
-      }
     });
 
+    // Set formRegisterValidate.isValid
+    var i = 0;
+    for (let singleUseData of arrayUserData) {
+      if (singleUseData[1].isValid) {
+        i++;
+      }
+      else {
+        i--;
+      }
+    }
+    if (i === arrayUserData.length) {
+      newState.formRegisterValidate.isValid = true;
+    }
+    else {
+      newState.formRegisterValidate.isValid = false;
+    }
+    //  Precisa validar todos os isvalid
     this.setState(newState);
     console.log(this.state);
   }
