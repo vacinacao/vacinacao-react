@@ -33,8 +33,8 @@
     border-radius: 4px; 
     display: flex;
     flex-direction: column;
-    padding: 25px;
     margin-bottom: 25px;
+    padding: 25px;
 }
 
 .Login input {

@@ -1,10 +1,10 @@
 .Map {
+    background-color: rgb(244, 244, 244);
     display: flex;
     flex-direction: column;
+    margin-bottom: -30px;
     padding: 60px;
     width: 100%;
-    background-color: rgb(244, 244, 244);
-    margin-bottom: -30px;
 }
 
 .Map h2{
@@ -24,20 +24,20 @@
 }
 
 .Map .formMap input{
-    height: 50px;
-    width: 260px;
-    border-radius: 4px;
-    margin-bottom: 10px;
     border:solid 1px black;
+    border-radius: 4px;
+    height: 50px;
+    margin-bottom: 10px;
+    width: 260px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
 }
 
-
 .Map .formMap button{
-    height: 50px;
-    width: 260px;
+    background-color:cornflowerblue;
     border-radius: 4px;
     color: white;
     font-weight: bold;
-    background-color:cornflowerblue;
-    
+    height: 50px;
+    width: 260px;    
 }
