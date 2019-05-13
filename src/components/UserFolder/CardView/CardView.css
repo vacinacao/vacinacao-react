@@ -17,7 +17,7 @@
 }
 
 .CardView h2 {
-    margin: 50px 0;
+    margin: 40px 0;
 }
 
 .CardView h3 {
@@ -36,6 +36,8 @@
 
 .CardView .SubtitleColors .SubtitleSquare {
     padding: 20px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgb(220, 220, 220);
 }
 
 .CardView .Vaccines {

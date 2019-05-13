@@ -9,7 +9,7 @@ class GoogleMaps extends React.Component {
             <div className='googleMap'>
                 <Map
                     google={this.props.google}
-                     style={{width: '92vw', height: '700px', borderRadius: '10px', position: 'relative'}}
+                     style={{width: '100%', height: '700px', borderRadius: '10px', position: 'relative'}}
                     initialCenter={{
                         lat: -23.5513206,
                         lng: -46.6819499

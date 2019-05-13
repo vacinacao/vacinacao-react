@@ -3,6 +3,7 @@ import './HomeApp.css';
 import BannerCarousel from '../BannerCarousel/BannerCarousel';
 import About from '../About/About';
 import Map from '../Map/Map';
+import AgeVacines from '../AgeVacines/AgeVacines';
 
 class HomeApp extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class HomeApp extends React.Component {
       <div>
       <BannerCarousel/>
       <About/>
+      <AgeVacines/>
       <Map/>
       </div>
     );
