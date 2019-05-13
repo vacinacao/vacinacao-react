@@ -1,29 +1,3 @@
-.Navbar .Menu {
-    align-items: center;
-    background-color: cornflowerblue;
-    display: flex;
-    flex-direction: column;
-    height: 85vh;
-    padding: 20px 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transform: translate(400%, 80px);
-    transition: transform 0.6s ease-in-out;
-    width: 100vw;
-}
-
-.Navbar .Menu.Open {
-    transform: translate(0, 80px);
-}
-
-.Navbar .Menu a, .Navbar .Menu p {
-    color: white;
-    font-size: 18pt;
-    margin: 10px 0;
-    text-decoration: none;
-}
-
 .Navbar .HamburguerButton {
     align-items: center;
     cursor: pointer;
@@ -59,6 +33,33 @@
     transform: rotateZ(45deg);
 }
 
+.Navbar .Menu {
+    align-items: center;
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    padding: 20px 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(400%, 80px);
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+    z-index: 99;
+}
+
+.Navbar .Menu.Open {
+    transform: translate(0, 80px);
+}
+
+.Navbar .Menu a, .Navbar .Menu p {
+    color: white;
+    font-size: 14pt;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
 @media (min-width: 768px) {
     .Navbar .Menu {
         align-items: center;
@@ -70,10 +71,22 @@
         padding: 0;
         position: relative;
         transform: none;
-        width: 50vw;
+        width: 65%;
     }
 
     .Navbar .HamburguerButton {
         display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .Navbar .Menu {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Navbar .Menu {
+        width: 50%;
     }
 }
