@@ -2,11 +2,13 @@ import React from 'react';
 import './Register.css';
 import CheckRegister from '../CheckRegister/CheckRegister'
 import FormRegister from '../FormRegister/FormRegister';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+
 
 class Register extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       checkRegisterDisplay: false,
       formRegisterValidate: {
@@ -102,7 +104,6 @@ class Register extends React.Component {
       },
     }
   }
-
   handleNameChange = (event) => {
     let newState = this.state;
     newState.userData[event.target.name].inputData.inputValue = event.target.value;
@@ -113,6 +114,16 @@ class Register extends React.Component {
     let newState = this.state;
     newState.checkRegisterDisplay = true;
     this.handleValidate();
+    if(this.state.formRegisterValidate.isValid){
+      firebase.auth()
+      .createUserWithEmailAndPassword(this.state.userData.email.inputData.inputValue, this.state.userData.password.inputData.inputValue)
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+    }
     this.setState(newState);
   }
 
