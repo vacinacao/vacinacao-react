@@ -78,8 +78,10 @@ class FormRegister extends React.Component {
               userData={this.props.userData.vaccineList}
 
             />
+            <div id='button'>
+              <button onClick={this.props.submit}>Enviar</button>
+            </div>
           </section>
-          <button onClick={this.props.submit}>Enviar</button>
         </div>
       </div>
     );
